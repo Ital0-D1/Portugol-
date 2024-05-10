@@ -4,6 +4,35 @@ programa
 	cadeia nomeEmpresa = "Tonhão"
   cadeia cnpjEmpresa = "123"
 	
+cadeia listaDeProdutos[5][5] = {
+  {"00001","Coca-Cola","10","2.9","Lata - 250ml"},
+  {"00002","Heineken","20","4.0","Lata - 350ml"},
+  {"00003","Agua Mineral","3","2.0","PET - 350ml"}
+}
+  
+funcao imprimirProdutos(){
+    para(inteiro i = 0;i < 3;i++){
+    para(inteiro j = 0;j < 5;j++){
+      se(j == 0){
+        escreva("Id Produto = "+listaDeProdutos[i][j])
+      }
+      se(j == 1){
+        escreva(", nome = "+listaDeProdutos[i][j])
+      }
+      se(j == 2){
+        escreva(", quantidade = "+listaDeProdutos[i][j])
+      }
+      se(j == 3){
+        escreva(", valor = "+listaDeProdutos[i][j])
+      }
+      se(j == 4){
+        escreva(", descricao = "+listaDeProdutos[i][j])
+      }
+    }
+    escreva("\n")
+  }
+}
+
   funcao logico empresaCadastrada() {
     logico empresa
     se(nomeEmpresa == "" ou cnpjEmpresa == "") {
@@ -44,9 +73,10 @@ programa
 	{
 	
 	caso 1: escreva ("Olá Caixa")
-		// gerenciador de produtos.editar produto  
-		// gerenciador de produtos.imprimir produto  
-		// gerenciador de produtos.verificar produto  
+    escreva("\n")
+		// gerenciador de produtos.editar produto
+		imprimirProdutos()
+		// gerenciador de produtos.verificar produto
 	pare
 
 	caso 2: escreva ("Olá gerente")
