@@ -74,7 +74,8 @@ funcao imprimirProdutos(){
 	
 	caso 1: escreva ("Olá Caixa")
     escreva("\n")
-		// gerenciador de produtos.editar produto
+		listaDeProdutos [0] [1] = "Fanta"
+    escreva ("Nome do produto alterado com sucesso\n")
 		imprimirProdutos()
 		// gerenciador de produtos.verificar produto
 	pare
