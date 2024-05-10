@@ -1,7 +1,20 @@
 programa
 {
+
+	cadeia nomeEmpresa = "Tonhão"
+  cadeia cnpjEmpresa = "123"
 	
-	funcao inicio()
+  funcao logico empresaCadastrada() {
+    logico empresa
+    se(nomeEmpresa == "" ou cnpjEmpresa == "") {
+      logico empresa = falso
+    } senao {
+      logico empresa = verdadeiro
+    }
+    retorne empresa
+  }
+
+  funcao inicio()
 	{
 
   inteiro opcao = 0
@@ -16,8 +29,14 @@ programa
 				+ "                                                              \r\n"
 				+ "")
 
+  se (empresaCadastrada() == falso) {
+    escreva("Digite a seguir nome e CNPJ \n")
+    leia(nomeEmpresa)
+    leia(cnpjEmpresa)
+    escreva("\n")
+  }
 	
-	escreva ("Seja bem vindo! Selecione o usuario:\n1. Caixa\n2. Gerente\n3. Administrador\n")
+	escreva (nomeEmpresa + "\nSeja bem vindo! Selecione o usuario:\n1. Caixa\n2. Gerente\n3. Administrador\n")
 	leia (opcao)  
 	limpa()
 
