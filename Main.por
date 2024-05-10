@@ -4,12 +4,18 @@ programa
 	cadeia nomeEmpresa = "Tonhão"
   cadeia cnpjEmpresa = "123"
 	
-cadeia listaDeProdutos[5][5] = {
+cadeia listaDeProdutos[][] = {
   {"00001","Coca-Cola","10","2.9","Lata - 250ml"},
   {"00002","Heineken","20","4.0","Lata - 350ml"},
-  {"00003","Agua Mineral","3","2.0","PET - 350ml"}
+  {"00003","Agua Mineral","3","2.0","PET - 350ml"},
+  {"","","","",""}
 }
   
+funcao editarProduto() {
+  	listaDeProdutos [0] [1] = "Fanta"
+    escreva ("Nome do produto alterado com sucesso\n")
+}
+
 funcao imprimirProdutos(){
     para(inteiro i = 0;i < 3;i++){
     para(inteiro j = 0;j < 5;j++){
@@ -31,6 +37,21 @@ funcao imprimirProdutos(){
     }
     escreva("\n")
   }
+}
+
+funcao verificarQuantidadeProdutos(){
+  inteiro numeroLinhas = 0
+  logico verificarVazio = falso
+  faca{
+    para(inteiro i = 0;verificarVazio == falso;i++){
+      se(listaDeProdutos[i][0] == ""){
+        verificarVazio = verdadeiro
+      } senao {
+        numeroLinhas++
+      }
+    }
+  }enquanto(verificarVazio == falso)
+  escreva("Número total de produtos: " + numeroLinhas)
 }
 
   funcao logico empresaCadastrada() {
@@ -74,10 +95,9 @@ funcao imprimirProdutos(){
 	
 	caso 1: escreva ("Olá Caixa")
     escreva("\n")
-		listaDeProdutos [0] [1] = "Fanta"
-    escreva ("Nome do produto alterado com sucesso\n")
+		editarProduto()
 		imprimirProdutos()
-		// gerenciador de produtos.verificar produto
+		verificarQuantidadeProdutos()
 	pare
 
 	caso 2: escreva ("Olá gerente")
